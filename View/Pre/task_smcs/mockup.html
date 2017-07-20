@@ -1,0 +1,125 @@
+<div id="table_container">
+    <table class="ttaskSMCS" ng-init="setData.current('Task List SMCS','taskSmcs')">  
+        <tr>
+            <td colspan="2" >Task list SMCS  : </td>
+        </tr>
+        
+        <tr>
+            <td >Task ID:</td>
+            <td >
+                 <input type="text" ng-model="taskSmcs.id" >
+            </td>
+        </tr> 
+        
+        <tr>
+            <td >Task type :</td>
+            <td >
+                <input type="radio"  ng-model="taskSmcs.type" name="taskSmcsType" id="on_taskSmcsType" value="r">
+                <label  for="on_taskSmcsType"> REMOTE </label>
+                   
+                <input type="radio"  ng-model="taskSmcs.type"  name="taskSmcsType" id="off_taskSmcsType" value="l">
+                <label  for="off_taskSmcsType"> LOCAL  </label>
+            </td>
+        </tr> 
+        
+         <tr ng-show="currentPass.blt">
+            <td >Orbit:</td>
+            <td >
+                 <input type="text" ng-model="taskSmcs.orbit" >
+            </td>
+        </tr> 
+        
+        <tr>
+            <td colspan="2" >Capture time UTC: </td>
+        </tr>
+        
+        <tr>
+            <td >UTC Start:</td>
+            <td >
+                <select   ng-model="taskSmcs.hour0" >
+                    <option  ng-repeat="h0 in time._24h"  value="{{h0}}" >{{h0}}</option>
+                </select>
+                <select   ng-model="taskSmcs.minute0" >
+                    <option  ng-repeat="m0 in time._60"  value="{{m0}}" >{{m0}}</option>
+                </select>
+                 <select   ng-model="taskSmcs.second0" >
+                    <option  ng-repeat="s0 in time._60"  value="{{s0}}" >{{s0}}</option>
+                </select>     
+            </td>
+        </tr> 
+        
+        <tr>
+            <td >UTC End:</td>
+            <td >
+                <select   ng-model="taskSmcs.hour2" >
+                    <option  ng-repeat="h2 in time._24h"  value="{{h2}}" >{{h2}}</option>
+                </select>
+                <select   ng-model="taskSmcs.minute2" >
+                    <option  ng-repeat="m2 in time._60"  value="{{m2}}" >{{m2}}</option>
+                </select>
+                 <select   ng-model="taskSmcs.second2" >
+                    <option  ng-repeat="s2 in time._60"  value="{{s2}}" >{{s2}}</option>
+                </select>     
+            </td>
+        </tr> 
+        
+        
+        <tr>
+            <td colspan="2" >Capture time Local: </td>
+        </tr>
+        
+         <tr>
+            <td >Local Start:  </td>
+            <td >
+                <select   ng-model="taskSmcs.hour1" >
+                    <option  ng-repeat="h1 in time._12h"  value="{{h1}}" >{{h1}}</option>
+                </select>
+                <select   ng-model="taskSmcs.minute1" >
+                    <option  ng-repeat="m1 in time._60"  value="{{m1}}" >{{m1}}</option>
+                </select>
+                 <select   ng-model="taskSmcs.second1" >
+                    <option  ng-repeat="s1 in time._60"  value="{{s1}}" >{{s1}}</option>
+                </select>     
+                <select ng-model="taskSmcs.meridium0">
+                    <option value="am">am</option>
+                    <option value="pm">pm</option>
+                </select>
+            </td>
+        </tr> 
+        
+        <tr >
+            <td >Local End:  </td>
+            <td >
+                <select   ng-model="taskSmcs.hour3" >
+                    <option  ng-repeat="h3 in time._12h"  value="{{h3}}" >{{h3}}</option>
+                </select>
+                <select   ng-model="taskSmcs.minute3" >
+                    <option  ng-repeat="m3 in time._60"  value="{{m3}}" >{{m3}}</option>
+                </select>
+                 <select   ng-model="taskSmcs.second3" >
+                    <option  ng-repeat="s3 in time._60"  value="{{s3}}" >{{s3}}</option>
+                </select>     
+                <select ng-model="taskSmcs.meridium1">
+                    <option value="am">am</option>
+                    <option value="pm">pm</option>
+                </select>
+            </td>
+        </tr> 
+        
+        
+        
+         <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="taskSmcs.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table> 
+</div>

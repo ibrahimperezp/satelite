@@ -1,0 +1,30 @@
+<table class="tsatellite" ng-init="setData.current('Administrar satélites','satellite')"  >
+    <tr  >
+        <td colspan="2" align="center" >Guardar Satélite  </td>   
+    </tr>
+    
+	<tr >
+        <td >Nombre :  </td>
+        <td >
+            <input type="text" ng-model="satellite.name" >
+        </td>   
+    </tr> 
+    
+    <tr >
+        <td colspan="2">
+            <input type="button" value="Guardar"  ng-click="play('save')" />
+        </td>
+    </tr>  
+       
+<table class="tsatellite" >
+    <tr  ng-init="getData.satellites()" >
+        <td colspan="2" align="center" >Eliminar Satélite  </td>   
+    </tr>
+    
+    <tr  ng-repeat="s in satellite.satellites">
+        <td >{{s.satelite_nombre}} </td>
+        <td >
+            <input type="button" value="Eliminar" style="cursor:pointer;background-color:#F03" ng-click="askDelete('satellite',s.idsatelite,'el satélite '+s.satelite_nombre)">
+        </td   
+    ></tr>
+</table> 

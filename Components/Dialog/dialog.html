@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dialog</title>
+<script src="../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../Model/Js/Angular/App/app.js"></script>
+<script src="../../Model/Js/Angular/Controller/dialog.js"></script>
+<script src="../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../Model/Js/Angular/Controller/validate.js"></script>
+
+
+
+</head>
+
+
+<body ng-app="satelite" >
+
+	<div>
+    
+    	
+        
+		
+        
+        
+        
+		<div ng-controller="dialog" >
+  <br />  <br />  <br /> 
+  
+<div ng-show="statusDialog" >
+    <div >
+    
+        <span ng-show="statusAlert">{{messageAlert}}</span>
+        
+        <div ng-show="statusLoading" class="loader" id="loader-1"></div>
+       
+    </div>
+    
+    <span ng-click="clear()">X</span>
+    
+</div>
+ 
+  <input type="button" value="Mensaje" ng-click="alert('Este es un mensaje');" >
+  
+ 
+
+          
+    
+    
+    
+    
+   </div>
+   </div>
+   </body>
+   </html>
+

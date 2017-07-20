@@ -1,0 +1,18 @@
+<div ng-show="dialog.statusDialog" class="dialog_background">
+    <div class="dialog_container">             
+        <div ng-show="dialog.titleMessage"  class="dialog_title">Mensaje del Sistema</div> 
+        
+        <div ng-show="dialog.titleLoading"  class="dialog_title">Cargando</div> 
+        
+        <div  ng-show="dialog.statusLoading"  class="dialog_loader"></div> 
+       
+        <div ng-show="dialog.statusMessage" class="dialog_message">        
+            <div class="dialog_alert" >{{dialog.message}}</div>       
+        </div> 
+        
+        <div ng-show="dialog.buttonContinue" class="dialog_close" ng-click="dialog.clear()"> Aceptar</div> 
+        
+        <div ng-show="dialog.buttonOption" class="dialog_option" ng-click="dialog.accept()"> <div></div>Aceptar</div>    
+        <div ng-show="dialog.buttonOption" class="dialog_option" ng-click="dialog.cancel()"> Cancelar</div>       
+    </div>
+</div> 

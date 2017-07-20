@@ -1,0 +1,72 @@
+<table class="tacu" ng-init="setData.current('Consultar actividad','query')">
+	<tr>
+    	<td colspan="2">Consulta</td>
+    </tr>
+    
+    <tr>
+    	<td>
+        	Inicio <input type="date" id="queryStart" >
+        </td>
+        <td>
+        	Fin <input type="date" id="queryEnd" >
+        </td>
+    </tr>
+    <tr>
+    	<td>Tipo de Búsqueda</td>
+    	<td >
+        	<select  ng-model="query.type" >
+            	<option value=""></option>
+                <option value="mbps">Mbps</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td >Satélite : </td>
+        <td >
+            <select  ng-init="getData.satellites()" ng-model="activity.satellite"  >
+                <option  ng-repeat="s in satellite.satellites"  value="{{s.idsatelite}}" >{{s.satelite_nombre}}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="2">
+        	<input type="button" value="Buscar" ng-click="getData.query();" >
+        </td>
+    </tr>
+</table>
+
+
+<table  ng-repeat="q in query.record" ng-if="q.mes!=''">
+	<tr  >
+    	<td colspan="4">  Media Rate Mbps - {{ normalize.month(q.mes);}}</td>
+    </tr>
+	
+    <tr>
+    	<td> # </td>
+        <td> Date </td>
+        <td> Rate Mbps CH1 </td>
+        <td> Rate Mbps CH2 </td>
+    </tr>
+    
+     <tr ng-repeat="d in q.dias" >
+    <!-- <tr>-->
+     
+    	<td> {{$index + 1}} </td>
+        <td> {{d.fecha}} </td>
+        <td> {{(d.ch1_rate - 0)}} </td>
+        <td> {{(d.ch2_rate - 0)}} </td>
+    </tr>
+    
+     <tr>
+    	<td colspan="2"> Media </td>
+        <td> {{q.media1}}  </td>
+        <td> {{q.media2}} </td>
+    </tr>
+   
+</table>
+
+<br><br>
+<input type="text" id="serie1" ng-model="series1" style="visibility:hidden;width:1px;" >
+<input type="text" id="serie2" ng-model="series2"  style="visibility:hidden;width:1px;" >
+<input type="text" id="categoria" ng-model="categories"  style="visibility:hidden;width:1px;" >
+<input ng-if="button" style="display:block;float:none;position:static;margin:0 auto" type="button" value="Ver la Gráfica" ng-click="normalize.opener()">

@@ -1,0 +1,126 @@
+#menu_list
+{
+	display:none;
+}
+.menu_list
+{
+	/*background-color:red;*/
+	height:100%;
+}
+
+#menu
+{
+	/*background-color:#CF0;*/
+	height:50px;
+	width:100%;
+	text-align:center;
+	box-sizing:border-box;
+	margin-top:1px;
+}
+
+.menu_list a, .menu_list a:hover, .menu_list a:active, .menu_list a:visited, .menu_list a:link
+{
+	/*background-color:red;*/ 
+	color:#666;
+	font-size:20px;
+	font-weight:bold;
+	width:20%;
+	text-decoration:none;
+	display:inline-block;
+	padding-top:12px;
+	height:100%;
+	box-sizing:border-box;	
+}
+
+.menu_list a:nth-child(1), .menu_list a:nth-child(1):hover, .menu_list a:nth-child(1):active, .menu_list a:nth-child(1):visited, .menu_list a:nth-child(1):link
+{
+	width:14%;	
+}
+
+.menu_list a:hover
+{
+	background-color:#CCC;
+	color:#fff;
+}
+
+.hamburguer
+{
+	display:none;
+}
+
+.logo
+{
+	display:none;
+}
+
+@media (max-width: 960px)
+{	
+	.logo
+	{
+		/*background-color:red;*/
+		display:inline-block;
+		width:200px;
+		height:100%;
+		background-image:url(../image/middle.jpg);
+		background-size:600px 100% ;
+		background-repeat:no-repeat;
+	}
+	
+	.hamburguer
+	{
+		display:inline-block;
+		position:relative;
+		float:left;
+		left:20px;
+		height:70px;
+		color:#ccc;
+		font-size:50px;
+		cursor:pointer;
+	}
+	
+	#menu
+	{
+		height:70px;
+	}
+	
+	.menu_list
+	{
+		display:none;
+	}
+	
+	#menu_list:checked ~ .menu_list
+	{
+		display:block;
+	}
+	
+	.menu_list a, .menu_list a:hover, .menu_list a:active, .menu_list a:visited, .menu_list a:link
+	{
+		background-color:#fff;
+		/*background-color:#9F3;*/
+		display:block;
+		position:static;
+		float:none;
+		color:#666;
+		font-size:20px;
+		font-weight:bold;
+		width:100%;
+		text-decoration:none;
+		display:inline-block;
+		padding-top:22px;
+		height:70px;
+		box-sizing:border-box;	
+	}
+	
+	.menu_list a:nth-child(1), .menu_list a:nth-child(1):hover, .menu_list a:nth-child(1):active, .menu_list a:nth-child(1):visited, .menu_list a:nth-child(1):link
+	{
+		width:100%;	
+	}
+	
+	.menu_list a:hover
+	{
+		background-color:#CCC;
+		color:#fff;
+	}
+}
+
+

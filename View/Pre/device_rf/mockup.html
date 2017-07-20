@@ -1,0 +1,32 @@
+<div id="table_container">
+    <table class="tdevice_rf" ng-init="setData.current('Device RF','deviceRF')" >    
+        <tr>
+            <td colspan="2">Device RF : </td>
+        </tr>
+        
+         <tr  ng-repeat="drf in nDeviceRF"  >
+            <td >{{drf.title}} : </td>
+            <td >
+                 <input type="radio" ng-model="deviceRF['v'+$index]" name="device_rf{{$index}}" id="on_device_rf{{$index}}" value="s">
+                   <label id="label_device_rf{{$index}}"  for="on_device_rf{{$index}}"> ON</label>
+                   
+                 <input type="radio"  ng-model="deviceRF['v'+$index]"  name="device_rf{{$index}}" id="off_device_rf{{$index}}" value="n">              
+                 <label id="label_device_rf{{$index}}"  for="off_device_rf{{$index}}"> OFF </label>    
+            </td>        
+        </tr>
+        
+         <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="deviceRF.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>
+</div>

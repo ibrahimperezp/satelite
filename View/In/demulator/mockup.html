@@ -1,0 +1,47 @@
+<div id="table_container">
+    <table  class="tdemulator" ng-init="setData.current('Demulator','demulatorIn')"  > 
+        <tr>
+            <td colspan="2" align="center" >Demulator: </td>
+        </tr>
+        
+        <tr  ng-repeat="dem in nDemulatorIn | limitTo:3"  >
+            <td >{{dem.title}} : </td>
+            <td >
+                <input type="radio"  ng-model="demulatorIn['v'+$index]" name="demulatorIn{{$index}}" id="on_demulatorIn{{$index}}" value="s">       
+                   <label id="label_demulatorIn{{$index}}"  for="on_demulatorIn{{$index}}"> SI</label>
+                   
+                 <input type="radio"  ng-model="demulatorIn['v'+$index]"  name="demulatorIn{{$index}}" id="off_demulatorIn{{$index}}" value="n"> 
+                   <label id="label_demulatorIn{{$index}}"  for="off_demulatorIn{{$index}}">  NO </label>
+            </td>
+        </tr>   
+        
+        <tr>
+            <td colspan="2" align="center" >Total Eb/ N0 : </td>
+        </tr>
+      
+        
+        <tr >
+            <td colspan="2" align="center" >
+                <input type="text" ng-model="demulatorIn['v3']" > <br />
+                <input type="text" ng-model="demulatorIn['v4']" > <br />
+                <input type="text" ng-model="demulatorIn['v5']" >
+            </td>
+            
+        </tr>
+        
+    
+        <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="demulatorIn.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>
+</div>

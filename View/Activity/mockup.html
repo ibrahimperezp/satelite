@@ -1,0 +1,66 @@
+<table class="tacu" ng-init="setData.current('Administrar actividad','activity')">
+	 <tr>
+        <td colspan="2" >Crear Actividades </td>
+    </tr>
+    
+    <tr>
+        <td >Satélite : </td>
+        <td >
+            <select  ng-init="getData.satellites()" ng-model="activity.satellite"  >
+                <option  ng-repeat="s in satellite.satellites"  value="{{s.idsatelite}}" >{{s.satelite_nombre}}</option>
+            </select>
+        </td>
+    </tr>
+    
+    <tr>
+        <td >Fecha : </td>
+        <td >
+            <input id="activityDate"  type="date"  >
+            <input type="button" ng-click="setData.readDate('activityDate');" value="Obtener"  > 
+        </td>                
+    </tr>
+       
+    <tr >
+        <td >Local time : </td>
+        <td >
+            <input type="radio"  ng-model="activity.turn" name="turn" id="diurnal" value="d">               
+            <label for="diurnal"></label>
+       
+            <input type="radio"  ng-model="activity.turn"  name="turn" id="nocturnal" value="n">
+            <label for="nocturnal"></label>
+       
+            <span  class="nocturnal">7:30 PM - 12:00 AM</span>
+            <span  class="diurnal">8:30 AM - 1:30 PM</span>
+        </td>
+    </tr>
+    
+    <tr>
+        <td >Pase Nro. : </td>
+        <td >
+            <select ng-model="activity.pass" >
+                <option ng-repeat="ac in activity.passes">{{ac}}</option>
+            </select> 
+        </td>                
+
+    </tr>            
+  
+    <tr>
+      	<td colspan="2">Pass mode : </td>
+    </tr>
+    
+    <tr  ng-repeat="pm in nPassPre"   >
+    	<td >{{pm.title}} :   </td>
+        <td >
+             <input type="radio"  ng-model="activity['v0']" name="activity1" id="on_activity{{$index+1}}" value="{{$index+1}}">
+             <label id="act" for="on_activity{{$index+1}}">{{pm.title}}</label>
+        </td>        
+    </tr>  
+    
+    <tr >
+        <td colspan="2">
+            <input type="button" value="Guardar Actividad" ng-click="play('save')"  />
+        </td>
+    </tr> 
+    
+   
+</table >

@@ -1,0 +1,130 @@
+<!DOCTYPE html >
+<html lang="es" ng-app="satelite"  ng-controller="controller"  >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prepase</title>
+<script src="../../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../../Model/Js/Angular/Service/dialog.js"></script>
+<script src="../../../../Model/Js/Angular/Service/route.js"></script>
+<script src="../../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/controller.js"></script>
+
+
+</head>
+
+
+<body  >
+
+	<div>
+    
+    	<div ng-include src="route.shortcut.dialog" ></div> 
+        
+		
+        
+        
+        
+		<div  >
+  <br />  <br />  <br /> 
+  
+  <!--  
+   //////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////                         ///////////////////////////////////////
+	/////////////////////////////////   forzar valor del BLT  ////////////////////////////////////////
+	////////////////////////////////                         /////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 
+  <input type="button" value="BLT {{currentPass.backup }}" ng-click="forceBLT();" >
+  
+  <!--  
+   //////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////                         ///////////////////////////////////////
+	/////////////////////////////////   forzar valor del BLT  ////////////////////////////////////////
+	////////////////////////////////                         /////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+    
+    <table border="1" align="center">     
+        
+        <tr>
+        	<td colspan="2" >Task list RDR  : </td>
+        </tr>
+        
+         <tr  >
+        	<td >Task ID : </td>
+            <td >
+            	 <input type="text" ng-model="taskRDR['id']" placeholder="decimales" >                 
+           
+  			</td>
+            
+        </tr>
+        
+          <tr  >
+        	<td >OrbitID : </td>
+            <td >
+            	 <input type="text" ng-model="taskRDR['orbit']" placeholder="decimales" >                 
+           
+  			</td>
+            
+        </tr>
+     
+       
+        
+        <tr  >
+        	<td >UTC 1 :</td>
+           <td >
+            	 <input type="text" ng-model="taskRDR['utc1']" placeholder="decimales" >
+            </td>
+        </tr> 
+         <tr  >
+        	<td >UTC 2 :</td>
+           <td >
+            	 <input type="text" ng-model="taskRDR['utc2']" placeholder="decimales" >
+            </td>
+        </tr> 
+         <tr  >
+        	<td >Local 1 :</td>
+           <td >
+            	 <input type="text" ng-model="taskRDR['local1']" placeholder="decimales" >
+            </td>
+        </tr> 
+         <tr  >
+        	<td >Local 1 :</td>
+           <td >
+            	 <input type="text" ng-model="taskRDR['local2']" placeholder="decimales" >
+            </td>
+        </tr> 
+       
+       <tr>
+        	<td >Trans mode :</td>
+           <td >
+            <input type="radio"  ng-model="taskRDR['trans']" name="taskRDR4" id="on_taskRDR4" value="syn">
+           
+                   <label  for="on_taskRDR4">
+                       SYN
+                   </label>
+                   
+                 <input type="radio"  ng-model="taskRDR['trans']"  name="taskRDR4" id="off_taskRDR4" value="asyn">
+                   
+                   <label  for="off_taskRDR4">
+                        ASYN
+                   </label>
+            </td>
+        </tr> 
+        
+        	<tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Task List RDR" ng-click="validate('taskRDR');" />
+            </td>
+        </tr>
+        
+        </table> 
+    
+   </div>
+   </div>
+   </body>
+   </html>            

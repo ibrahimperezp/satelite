@@ -1,0 +1,28 @@
+<div id="table_container">
+    <table  class="ttask_rdr2" ng-init="setData.current('Task List RDR','taskRdrIn')">
+        <tr>
+            <td colspan="2" >Task list RDR: </td>
+        </tr>
+        
+        <tr ng-repeat="RDR2 in nTaskRdrIn"  >
+            <td >{{RDR2.title}} : </td>
+            <td >
+                 <input type="text" ng-model="taskRdrIn['v'+$index]" placeholder="decimales" >
+            </td>
+        </tr>
+        
+         <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="taskRdrIn.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table> 
+</div>   

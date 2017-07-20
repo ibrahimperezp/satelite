@@ -1,0 +1,34 @@
+<div id="table_container">
+    <table  class="tsend" ng-init="setData.current('Send Guide File','send')" >           
+        <tr>
+            <td colspan="2" >Send guide files: </td>
+        </tr>
+        
+        <tr  ng-repeat="se in nSend" ng-show="currentPass.blt==false || $index==0 "  >
+            <td >{{se.title}} : </td>
+            <td >
+                <input type="radio"  ng-model="send['v'+$index]" name="send{{$index}}" id="on_send{{$index}}" value="s">
+                <label id="label_send{{$index}}"  for="on_send{{$index}}">SI</label>
+                   
+                <input type="radio"  ng-model="send['v'+$index]"  name="send{{$index}}" id="off_send{{$index}}" value="n">
+                <label id="label_send{{$index}}"  for="off_send{{$index}}"> NO</label>
+            </td>
+            
+        </tr>   
+        
+         <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="send.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+        
+    </table>
+</div>

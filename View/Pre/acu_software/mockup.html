@@ -1,0 +1,28 @@
+<div id="table_container">
+    <table class="tacu" ng-init="setData.current('Acu Software','acuSoftwarePre')" > 
+        <tr>
+            <td colspan="2">{{currentModule.title}}</td>
+        </tr>
+        
+        <tr   >
+            <td align="center" >tracking values max elev :  </td>
+            <td >
+                <input type="text" ng-model="acuSoftwarePre['v0']" >
+            </td>
+        </tr>
+        
+         <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="acuSoftwarePre.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>
+</div>     

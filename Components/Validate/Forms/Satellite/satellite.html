@@ -1,0 +1,66 @@
+<!DOCTYPE html >
+<html lang="es" ng-app="satelite" ng-controller="controller">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prepase</title>
+<script src="../../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../../Model/Js/Angular/Service/dialog.js"></script>
+<script src="../../../../Model/Js/Angular/Service/route.js"></script>
+<script src="../../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Settings/settingsDeclareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/controller.js"></script>
+
+<link rel="stylesheet" href="../../../../View/Style/trend.css" type="text/css">
+<link rel="stylesheet" href="../../../../View/Style/binary.css" type="text/css">
+<link rel="stylesheet" href="../../../../View/Style/dialog.css" type="text/css">
+</head>
+
+
+<body>
+    <div ng-include src="route.shortcut.dialog" ></div>  
+    
+    <div >   
+        <table border="1" align="center"   >
+            <tr align="center" >
+                <td colspan="2" align="center" >Guardar Satélite  </td>
+           
+            </tr>
+            
+        <tr >
+                <td >Nombre :  </td>
+                <td >
+                	<input type="text" ng-model="satellite.name" >
+                </td>
+           
+            </tr> 
+            
+             <tr align="center">
+                <td colspan="2">
+                    <input type="button" value="Guardar" ng-click="validate('satellite');" />
+                </td>
+            </tr>     
+        </table>  
+        
+         <table ng-init="getSatellites()"  border="1" align="center"   >
+            <tr align="center" >
+                <td colspan="2" align="center" >Eliminar Satélite  </td>
+           
+            </tr>
+            
+        	<tr  ng-repeat="s in satellite.satellites">
+                <td >{{s.satelite_nombre}} </td>
+                <td >
+                	<span ng-click="askDelete(s.idsatelite,s.satelite_nombre)">Eliminar</span>
+                </td>
+           
+            </tr>
+        </table> 
+        
+          
+	</div>
+</body>
+</html>

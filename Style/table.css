@@ -1,0 +1,219 @@
+input[type="button"]
+{
+	background-color:#09C;
+	height:30px;
+	width:auto;
+	font-size:14px;
+	cursor:pointer;
+	color:#fff;
+	border:none;
+}
+
+#table_container
+{
+	margin:0 auto;
+	display:block;
+	width:80%;
+	overflow-y:auto;
+	height:80vh;
+	margin-top:20px;
+	margin-bottom:20px;
+	border-bottom:2px solid #ddd;
+	border-top:2px solid #ddd;
+}
+
+table
+{
+	margin:0 auto;
+	position:relative;
+	border-collapse:collapse;
+	border-radius:10px;
+	box-shadow: 0 0 20px #ccc;
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:20px;
+	color:#555;
+	width:100%;
+	background-color:#fff;
+}
+
+tr
+{
+	height:50px;
+}
+
+
+
+tr:nth-child(1)  > td
+{
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	background-color:#ccc;
+	color:#fff;
+}
+
+.no_header tr:nth-child(1)  > td
+{
+	border-radius:none;
+	background-color:transparent;
+	color:#000;
+}
+
+.tsactivity tr:nth-child(1)  > td
+{
+	border-radius: 0px;
+}
+
+
+.tsatellite , .tups, .tsend, .ttask_rdr2, .ttrack,.tacu3, .tpass
+{
+	max-width:300px;
+}
+
+.tactivity , .tacu, .tdevice, .tdevice_acu, .tdevice_rf, .tpower, .tstatus, .track2, .ttask_rdr,.ttaskSMCS, .tacu2, .tdemulator, .traw1, .traw2, .tacancel
+{
+	max-width:400px;
+	
+}
+
+
+.tsend, .tstatus_ups
+{
+	
+	max-width:250px;
+}
+
+.tsactivity, .no_header
+{
+	box-shadow:none;
+	border-bottom:1px solid grey;
+	margin-bottom:0px;
+}
+
+
+.no_header tr  > td:nth-child(1), .tsactivity tr  > td:nth-child(1)
+{
+	width:40px;
+}
+
+
+.no_header tr  > td:nth-child(3), .tsactivity tr  > td:nth-child(3)
+{
+	width:100px;
+}
+
+
+.no_header tr  > td:nth-child(4), .tsactivity tr  > td:nth-child(4), .tsactivity tr  > td:nth-child(2), .no_header tr  > td:nth-child(2)
+{
+	width:80px;
+}
+
+
+.no_header tr  > td:nth-child(5), .tsactivity tr  > td:nth-child(5), .no_header tr  > td:nth-child(6),.tsactivity tr  > td:nth-child(6), .no_header tr  > td:nth-child(7),.tsactivity tr  > td:nth-child(7)
+{
+	width:90px;
+}
+
+input[type="button"]:active,  input[type="button"]:focus, input[type="button"]::-moz-focus-inner
+{
+	border:none;
+	outline:none;
+}
+
+
+
+button::-moz-focus-inner 
+{
+  border: none;
+  outline:none;
+  
+}
+
+.show
+{
+	background:url(../Image/icon2.png) #fff;
+	background-size:100px 50px;
+	width:100vw;
+	height:100vh;
+	overflow:auto;
+	text-align:center;
+	position:fixed;
+	top:0px;
+	left:-100vw;
+	z-index:2;
+	transition:left 2s;
+}
+input[type="checkbox"]
+{
+	display:none;
+}
+
+#show:checked ~ .show
+{
+	left:0px;
+	transition:left 1s;
+}
+
+#show:checked ~ .show #close
+{
+	left:90vw;
+	transition:left 1s;
+}
+
+.no_a, .no_a:focus, .no_a:active, .no_a:visited, .no_a:link
+{
+	text-decoration:none;
+}
+
+#close
+{
+	left:-100vh;
+	position:fixed;
+	float:right;
+	right:80px;
+	top:40px;
+	background-color:blue;
+	border-radius:50%;
+	border:4px solid #ffF;
+	width:50px;
+	height:50px;
+	color:#fff;
+	font-size:26px;
+	line-height:100%;
+	text-align:center;
+	font-weight:bold;
+	box-sizing:border-box;
+	padding-top:10px;
+	box-shadow: 0 0 30px #888;
+	transition:left 2s;
+}
+
+label[for="on_passPost"],label[for="off_passPost"]
+{
+	width:100px;
+	font-size:14px;
+}
+#act
+{
+	width:200px;
+}
+@media (max-width: 960px)
+{	
+	#table_container
+	{
+		margin-top:100px;
+	}
+	#show:checked ~ .show #close
+	{
+		float:left;
+		left:5vw;
+		transition:left 1s;
+	}
+	table
+	{
+		background-color:#fff;
+		margin-bottom:100px;
+		box-shadow: 0 0 20px #999;
+	}
+}
+

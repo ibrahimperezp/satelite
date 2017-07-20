@@ -1,0 +1,92 @@
+label[for^="on_passMode"]
+{
+	width:200px;	
+	border:none;
+	height:30px;
+}
+
+td:nth-child(1)
+{
+	width:200px;
+}
+
+td:nth-child(2)
+{
+	width:300px;
+}
+
+
+label[for="diurnal"]
+{
+	width:30px;
+	height:30px;
+	display:inline-block;
+	background:url(../Image/sun.png) no-repeat center, #ccc;
+	cursor:pointer;
+}
+
+input[type="radio"][id="diurnal"]:checked + label
+{ 
+	background:url(../Image/sun.png) no-repeat center, #00C853;
+}
+input[type="radio"][id="diurnal"]:checked ~ .diurnal
+{ 
+	display:inline-block;
+	text-align:center;
+	height:30px;
+	width:80px;
+	font-size:12px;
+}
+input[type="radio"][id="nocturnal"]:checked ~ .nocturnal
+{ 
+	display:inline-block;
+	text-align:center;
+	height:30px;
+	width:80px;
+	font-size:12px;
+}
+
+input[type="radio"][id="nocturnal"]:checked ~ .none, input[type="radio"][id="diurnal"]:checked ~ .none
+{ 
+	display:none;
+}
+.none
+{
+	display:inline-block;
+	text-align:center;
+	height:30px;
+	width:80px;
+	font-size:12px;
+}
+
+label[for="nocturnal"]
+{
+	width:30px;
+	height:30px;
+	display:inline-block;
+	background:url(../Image/moon.png) no-repeat center, #ccc;
+	cursor:pointer;
+}
+
+input[type="radio"][id="nocturnal"]:checked + label
+{ 
+	background:url(../Image/moon.png) no-repeat center, #00C853;
+}
+
+
+
+.nocturnal, .diurnal
+{
+	display:none;
+}
+
+td input[type="button"]
+{
+	background-color: #09C;
+	height:30px;
+	text-align:center;
+	color:#fff;
+	border:none;
+	cursor:pointer;
+}
+

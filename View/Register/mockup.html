@@ -1,0 +1,112 @@
+<table class="tsactivity tregister" ng-hide="currentPass.pass" ng-init="getData.uncompletedActivity()"   >
+    <tr ng-init="setData.current('Seleccione una actividad','register')" >
+        <td >Pase</td>
+        <td >turno</td>
+        <td >fecha</td>
+        <td >satelite</td>
+        <td >porcentaje</td>
+        <td >seleccionar</td>
+    </tr>
+</table>
+        
+<table class="no_header" ng-hide="currentPass.pass" ng-repeat="rec in activity.records | orderBy: 'nro_pase' "  >
+    <tr ng-if="rec.nro_pase>0" ng-init="setData.setControl(rec.nro_pase,rec.complete)">
+        <td >#{{rec.nro_pase}}</td>
+        <td >{{ miscellaneous.turn(rec.local_time)}}</td>
+        <td >{{rec.fecha}}</td>
+        <td >{{rec.name}}</td>
+        <td >{{rec.complete}}%</td>
+        <td align="center"  ng-show="validate.canSelect(rec.modules);">
+        	<input  ng-show= "rec.enable" type="button" value="Seleccionar" ng-click="getData.selectActivity(rec.idpase,rec.complete,rec.modules,rec.nro_pase,rec.fecha)"  />
+            <input  ng-hide="rec.enable" type="button" style="background-color:#F33;cursor:not-allowed" value="Bloqueado"  disabled="disabled" />
+        </td>
+        <td  ng-hide="validate.canSelect(rec.modules);">
+        	Completado
+        </td>
+    </tr>
+</table>
+
+<table class="tacancel" ng-show="currentPass.pass">
+	<tr>
+        <td colspan="2">Actividad Actual</td>
+    </tr> 
+    <tr>
+        <td>Nro de pase : {{currentPass.nro}}</td>
+        <!--<td>hay BLT : {{currentPass.blt}}</td>-->
+        <td  >Fecha : {{currentPass.date}}</td>
+    </tr>
+    
+    <tr>
+        <td colspan="2" ><input type="button" value="Cancelar" ng-click="getData.uncompletedActivity();"  /></td>
+    </tr>
+</table>
+    
+<table class="tacancel" ng-show="validate.showStage(currentPass,'pre');"  >
+	<tr>
+    	<td colspan="2">Pre : </td>
+    </tr>
+   
+    <tr ng-repeat="pre in stages.pre " ng-if="pre!=='passPre'"  ng-hide="currentPass.blt==true && (pre=='demulatorPre' || pre=='taskRdrPre')" >
+    	<td>{{normalize.name(pre)}} : </td>
+        <td ng-hide="currentPass.modules[pre]" >
+        	<a  ng-click="normalize.menu();" href="#module/{{normalize.encode(route.shortcut,pre)}}">Registrar</a>
+        </td>
+        <td ng-show="currentPass.modules[pre]"  >
+        	Completado
+        </td>
+    </tr>
+</table>
+
+<table class="tacancel" ng-show="validate.showStage(currentPass,'in');" >
+	<tr>
+    	<td colspan="2">In : </td>
+    </tr>
+   
+    
+    <tr ng-repeat="in in stages.in " ng-hide="currentPass.blt==true && (in=='demulatorIn' || in=='taskRdrIn')">
+    	<td>{{normalize.name(in)}} : </td>
+        <td ng-hide="currentPass.modules[in]" >
+        	<a  ng-click="normalize.menu();" href="#module/{{normalize.encode(route.shortcut,in)}}">Registrar</a>
+        </td>
+        <td ng-show="currentPass.modules[in]" >
+        	Completado
+        </td>
+    </tr>
+</table>
+
+<table class="tacancel" ng-show="validate.showStage(currentPass,'post');">
+	<tr>
+    	<td colspan="2">Post : </td>
+    </tr>
+   
+    
+    <tr ng-repeat="post in stages.post "  ng-hide="currentPass.blt==true && (post=='raw1' || post=='raw2')">
+    	<td>{{normalize.name(post)}} : </td>
+        <td ng-hide="currentPass.modules[post]">
+        	<a  ng-click="normalize.menu();" href="#module/{{normalize.encode(route.shortcut,post)}}">Registrar</a>
+        </td>
+        <td ng-show="currentPass.modules[post]" >
+        	Completado
+        </td>
+    </tr>
+</table>
+
+
+<table class="tacancel" ng-show="validate.showStage(currentPass,'error');">
+	<tr>
+    	<td colspan="2">ERROR : </td>
+    </tr>
+   
+    
+    <tr >
+    	<td colspan="2">Número de pase completado, por favor seleccione otro número de pase </td>
+    </tr>
+</table>
+
+<input type="checkbox" id="show" />
+<div class="show">
+
+<span  id="close" class="no_a" style="cursor:pointer"  ng-click="normalize.menu();" href="#">X</span>
+<div style="overflow:auto;height:calc(100vh);" ng-view></div>
+</div>
+    

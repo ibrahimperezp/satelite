@@ -1,0 +1,32 @@
+<div id="table_container">
+    <table  class="tpass"  ng-init="setData.current('Pass Mode','passPost')" >   
+        <tr>
+            <td colspan="2" align="center" >Pass Mode : </td>
+        </tr>
+        
+        <tr  >
+            <td  >Pass Mode : </td>
+            <td  >
+                 <input type="radio"  ng-model="passPost['v0']" name="passPost" id="on_passPost" value="s">
+                 <label  for="on_passPost"> Efective </label>
+                   
+                <input type="radio"  ng-model="passPost['v0']"  name="passPost" id="off_passPost" value="n">
+                <label  for="off_passPost"> Failed </label>
+            </td>
+        </tr>  
+        
+        <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="passPost.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>
+</div>

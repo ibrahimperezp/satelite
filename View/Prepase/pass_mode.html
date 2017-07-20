@@ -1,0 +1,73 @@
+<br />  <br />  <br /> 
+<table border="1" align="center" >
+        
+        
+         <tr>
+        	<td colspan="2">Pass mode : </td>
+        </tr>
+        
+         <tr   >
+        	<td >Real time :   </td>
+            <td >
+            	 <input type="radio"  ng-model="passMode['v1']" name="passMode1" id="on_passMode1" value="1">
+           
+                   <label id="checkbox_passMode1"  for="on_passMode1"></label>
+                   
+                
+  			</td>
+            
+        </tr>  
+        
+         <tr   >
+        	<td >Cu-Real time :   </td>
+            <td >
+            	  <input type="radio"  ng-model="passMode['v1']"  name="passMode1" id="on_passMode2" value="2">
+                   
+                   <label id="checkbox_passMode2"  for="on_passMode2"></label>
+  			</td>
+            
+        </tr>  
+        
+        
+        
+         <tr   >
+        	<td >Playback:   </td>
+            <td >
+            	  <input type="radio"  ng-model="passMode['v1']"  name="passMode1" id="on_passMode3" value="3">
+                   
+                   <label id="checkbox_passMode3"  for="on_passMode3"></label>
+  			</td>
+            
+       </tr>
+       
+         <tr >
+        	<td colspan="2"  ng-click="onlyBackup()">Desmarcar </td>
+        </tr>
+       
+       
+        <tr   >
+        	<td >Backup local task :   </td>
+            <td >
+            	  <input type="radio"  ng-model="passMode['v2']"  name="passMode2" id="on_passMode4" value="s">
+                   
+                   <label id="label_passMode4"   for="on_passMode4">
+                        SI
+                   </label>
+                   
+                    <input type="radio"  ng-model="passMode['v2']"  name="passMode2" id="off_passMode4" value="n">
+                   
+                   <label id="label_passMode5"   for="off_passMode4">
+                        NO
+                   </label>
+  			</td>
+            
+        </tr>  
+        
+        <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Pass Mode" ng-click="guardar('passMode');" />
+            </td>
+        </tr> 
+        
+       
+   </table>

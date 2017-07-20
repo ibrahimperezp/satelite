@@ -1,0 +1,81 @@
+<!DOCTYPE html >
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prepase</title>
+<script src="../../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/dialog.js"></script>
+<script src="../../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/validate.js"></script>
+
+
+
+</head>
+
+
+<body ng-app="satelite" >
+
+	<div>
+    
+    	<div  ng-controller="dialog" ng-include="'../../../../View/Shared/dialog.html'"></div>  
+        
+		
+        
+        
+        
+		<div ng-controller="validate" >
+  <br />  <br />  <br /> 
+  
+  <!--  
+   //////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////                         ///////////////////////////////////////
+	/////////////////////////////////   forzar valor del BLT  ////////////////////////////////////////
+	////////////////////////////////                         /////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 
+  <input type="button" value="BLT {{currentPass.backup }}" ng-click="forceBLT();" >
+  
+  <!--  
+   //////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////                         ///////////////////////////////////////
+	/////////////////////////////////   forzar valor del BLT  ////////////////////////////////////////
+	////////////////////////////////                         /////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+<br />  <br /> <br />
+
+<table border="1" align="center">
+    	
+       
+        
+        <tr>
+        	<td colspan="2" >Task list RDR: </td>
+        </tr>
+        
+         <tr ng-repeat="RDR2 in cTaskRDR2" >
+        	<td >{{RDR2.name}} : </td>
+           <td >
+            	 <input type="text" ng-model="taskRDR2['v'+$index]" placeholder="decimales" >
+            </td>
+        </tr>
+        
+        
+     	<tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Task List RDR" ng-click="validate('taskRDR2');" />
+            </td>
+        </tr>
+        
+    </table>    
+    
+   </div>
+   </div>
+   </body>
+   </html>
+
+

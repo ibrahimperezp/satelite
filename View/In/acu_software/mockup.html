@@ -1,0 +1,28 @@
+<div id="table_container">
+    <table  class="tacu2" ng-init="setData.current('Acu Software','acuSoftwareIn')" >  
+        <tr>
+            <td colspan="2">ACU SOFTWARE </td>
+        </tr>
+        
+        <tr ng-repeat="acu2 in nAcuSoftwareIn" ng-hide="currentPass.blt==true && ($index==0 || $index==4 || $index==5) "  >
+            <td align="center" >{{acu2.title}}: </td>
+            <td >
+                <input type="text" ng-model="acuSoftwareIn['v'+$index]" >
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="acuSoftwareIn.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>
+</div>

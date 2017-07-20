@@ -1,0 +1,41 @@
+<div id="table_container">
+    <table  class="traw1" ng-init="setData.current('Data Raw 1','raw1')" > 
+        <tr>
+            <td colspan="2" align="center" >Raw 1: </td>
+        </tr>
+        
+         <tr  ng-repeat="ra1 in nRaw1 | limitTo: 13"  >
+            <td >{{ra1.title}} : </td>
+            <td >
+                  <input type="text" ng-model="raw1['v'+$index]" placeholder="decimales" >
+            </td>
+            
+        </tr>  
+        
+        <tr>
+            <td >{{nRaw1[13].title}} :</td>
+            <td >
+                <input type="radio"  ng-model="raw1['v13']" name="raw113" id="on_raw113" value="a">       
+                <label  for="on_raw113">   AUT </label>
+                   
+                <input type="radio"  ng-model="raw1['v13']"  name="raw113" id="off_raw113" value="f">
+                <label  for="off_raw113">   (FTP) MAN </label>
+            </td>
+        </tr> 
+        
+         <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="raw1.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>
+</div>
+    

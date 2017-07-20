@@ -1,0 +1,121 @@
+input[type="radio"]
+{
+	display:none;
+}
+label[for^="on_"],label[for^="off_"]
+{
+	display:inline;
+	float:left;
+	width:60px;
+	height:30px;
+	background-color:#CCC;
+	text-align:center;
+	cursor:pointer;
+	font-size:24px;
+	color:#FFF;
+	
+}
+
+label[for^="on_"]
+{
+	border-right:2px solid #999;
+	background-color:#CCC;	
+	color:#777;
+}
+
+input[type="radio"][id^="off_"]:checked + label
+{ 
+	background-color:#DD2C00;
+	color:#fff;
+}
+
+input[type="radio"][id^="on_"]:checked + label
+{ 
+	background-color:#00C853;
+	color:#fff;
+}
+
+input[type="radio"][name="passPre1"]:checked + label
+{ 
+	background-color:#39C;
+	color:#fff;	
+}
+
+input[type="radio"][name="passPre1"] + label
+{ 
+	width:200px;
+	border:none;
+}
+
+label[for="diurnal"],label[for="nocturnal"]
+{
+	background-size:50% 60%;
+	background-position:center;
+	background-repeat:no-repeat;
+	display:inline;
+	float:left;
+	width:40px;
+	height:30px;
+	background-color:#CCC;
+	cursor:pointer;
+}
+
+label[for="nocturnal"]
+{
+	background-image:url(../Image/moon.png);
+}
+
+label[for="diurnal"]
+{
+	background-image:url(../Image/sun.png);
+	border-right:2px solid #999;
+}
+
+#diurnal:checked + label
+{ 
+	background-color:#39C;
+}
+
+#nocturnal:checked + label
+{ 
+	background-color:#39C;
+}
+
+.nocturnal,.diurnal, .none
+{
+	display:none;
+}
+
+#nocturnal:checked ~ .nocturnal, #diurnal:checked ~ .diurnal
+{ 
+	display:inline;
+	float:right;
+	position:relative;
+	font-size:14px;
+	box-sizing:border-box;
+	padding-top:5px;
+	left:-10px;
+}
+
+.nocturnal,.diurnal, 
+{
+	display:none;
+}
+
+
+input[type="radio"]:checked + label[for="off_taskRDR4"], input[type="radio"]:checked + label[for="on_taskRDR4"], input[type="radio"]:checked + label[for="on_taskSmcsType"], input[type="radio"]:checked + label[for="off_taskSmcsType"]
+{
+	background-color:#39C;
+}
+
+label[for="off_taskSmcsType"], label[for="on_taskSmcsType"], label[for="off_passMode20"], label[for="on_passMode20"]
+{
+	width:auto;
+	box-sizing:border-box;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+/*background-color:#39C;*/
+
+

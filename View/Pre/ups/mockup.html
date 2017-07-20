@@ -1,0 +1,32 @@
+<div id="table_container">
+    <table  class="tups" ng-init="setData.current('Status Ups Room','ups')" >
+        <tr>
+            <td colspan="2">Status UPS room : </td>
+        </tr>
+        
+        <tr  ng-repeat="u in nUps"  >
+            <td >{{u.title}} : </td>
+            <td >
+                <input type="radio"  ng-model="ups['v'+$index]" name="ups{{$index}}" id="on_ups{{$index}}" value="s">       
+                <label id="label_ups{{$index}}"  for="on_ups{{$index}}"> ON</label>
+                   
+                <input type="radio"  ng-model="ups['v'+$index]"  name="ups{{$index}}" id="off_ups{{$index}}" value="n">
+                <label id="label_ups{{$index}}"  for="off_ups{{$index}}"> OFF </label>  
+            </td>
+        </tr>
+        
+         <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="ups.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>   
+</div>

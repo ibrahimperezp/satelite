@@ -1,0 +1,38 @@
+<br />  <br /> <br />
+<table border="1" align="center">
+        
+        
+          <tr>
+        	<td colspan="2">Status UPS room : </td>
+        </tr>
+        
+        <tr  ng-repeat="u in cUps"  >
+        	<td >{{u.name}} : </td>
+            <td >
+            	 <input type="radio"  ng-model="ups['v'+u.index]" name="ups{{u.index}}" id="on_ups{{u.index}}" value="s">
+           
+                   <label id="label_ups{{u.index}}"  for="on_ups{{u.index}}">
+                        ON
+                   </label>
+                   
+                 <input type="radio"  ng-model="ups['v'+u.index]"  name="ups{{u.index}}" id="off_ups{{u.index}}" value="n">
+                   
+                   <label id="label_ups{{u.index}}"  for="off_ups{{u.index}}">
+                        OFF
+                   </label>
+                   
+           
+  			</td>
+        </tr>
+        
+         <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Status Ups Room" ng-click="guardar('ups');" />
+            </td>
+        </tr>
+        
+        
+        
+        
+</table>  
+    

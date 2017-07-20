@@ -1,0 +1,32 @@
+<div id="table_container">
+    <table class="track2" ng-init="setData.current('Rack #2','rack2')" >
+        <tr>
+            <td colspan="2">Rack #2 : </td>
+        </tr>
+        
+        <tr  ng-repeat="r2 in nRack2"  >
+            <td >{{r2.title}} : </td>
+            <td >
+                <input type="radio"  ng-model="rack2['v'+$index]" name="rack2{{$index}}" id="on_rack2{{$index}}" value="s">
+                <label id="label_rack2{{$index}}"  for="on_rack2{{$index}}"> ON </label>
+                   
+                <input type="radio"  ng-model="rack2['v'+$index]"  name="rack2{{$index}}" id="off_rack2{{$index}}" value="n">
+                <label id="label_rack2{{$index}}"  for="off_rack2{{$index}}"> OFF </label>
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="rack2.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>  
+</div>   

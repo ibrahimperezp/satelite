@@ -1,0 +1,36 @@
+<br />  <br /> <br />
+<table border="1" align="center">
+        
+        <tr>
+        	<td colspan="2">Rack N2 : </td>
+        </tr>
+        
+         <tr  ng-repeat="r2 in cRack2"  >
+        	<td >{{r2.name}} : </td>
+            <td >
+            	 <input type="radio"  ng-model="rack2['v'+r2.index]" name="rack2{{r2.index}}" id="on_rack2{{r2.index}}" value="s">
+           
+                   <label id="label_rack2{{r2.index}}"  for="on_rack2{{r2.index}}">
+                        ON
+                   </label>
+                   
+                 <input type="radio"  ng-model="rack2['v'+r2.index]"  name="rack2{{r2.index}}" id="off_rack2{{r2.index}}" value="n">
+                   
+                   <label id="label_rack2{{r2.index}}"  for="off_rack2{{r2.index}}">
+                        OFF
+                   </label>
+                   
+           
+  			</td>
+        </tr>
+        
+         <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Rack No2" ng-click="guardar('rack2');" />
+            </td>
+        </tr>
+       
+  </table>      
+        
+        
+        <br />  <br /> <br />

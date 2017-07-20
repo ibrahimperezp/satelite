@@ -1,0 +1,60 @@
+<div id="table_container">
+    <table  class="ttrack" ng-init="setData.current('Track Receiver','track')">       
+        <tr>
+            <td colspan="2">Track Receiver: </td>
+        </tr>
+        
+         <tr  ng-repeat="tr in nTrack | limitTo: 6" ng-hide="currentPass.blt==true && ($index==1 || $index==3 || $index==5) "   >
+            <td >{{tr.title}} : </td>
+            <td >
+               <input type="radio"  ng-model="track['v'+$index]" name="track{{$index}}" id="on_track{{$index}}" value="s">
+                <label id="label_track{{$index}}"  for="on_track{{$index}}">  SI </label>
+                   
+                <input type="radio"  ng-model="track['v'+$index]"  name="track{{$index}}" id="off_track{{$index}}" value="n">
+                <label id="label_track{{$index}}"  for="off_track{{$index}}">  NO </label>
+            </td>
+        </tr>  
+        
+        <tr   >
+            <td > AGC Bolt s :</td>
+            <td >
+               <input type="text"  ng-model="track['v6']" >
+            </td>
+        </tr> 
+        
+        <tr   ng-hide="currentPass.blt==true" >
+            <td > AGC Bolt x :</td>
+            <td >
+               <input type="text"  ng-model="track['v7']" >
+            </td>
+        </tr>  
+        
+        <tr   >
+            <td > Input Power s :</td>
+            <td >
+               <input type="text"  ng-model="track['v8']" >
+            </td>
+        </tr> 
+        
+        <tr   ng-hide="currentPass.blt==true" >
+            <td > Input Power x :</td>
+            <td >
+               <input type="text"  ng-model="track['v9']" >
+            </td>
+        </tr>  
+    
+        <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="track.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table> 
+</div>

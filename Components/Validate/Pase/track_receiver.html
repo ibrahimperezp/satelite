@@ -1,0 +1,98 @@
+
+<!DOCTYPE html >
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prepase</title>
+<script src="../../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/dialog.js"></script>
+<script src="../../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/validate.js"></script>
+
+
+
+</head>
+
+
+<body ng-app="satelite" >
+
+	<div>
+    
+    	<div  ng-controller="dialog" ng-include="'../../../../View/Shared/dialog.html'"></div>  
+        
+		
+        
+        
+        
+		<div ng-controller="validate"  >
+ 
+  
+  <!--  
+   //////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////                         ///////////////////////////////////////
+	/////////////////////////////////   forzar valor del BLT  ////////////////////////////////////////
+	////////////////////////////////                         /////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 
+  <input type="button" value="BLT {{currentPass.backup }}" ng-click="forceBLT();" >
+  
+  <!--  
+   //////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////                         ///////////////////////////////////////
+	/////////////////////////////////   forzar valor del BLT  ////////////////////////////////////////
+	////////////////////////////////                         /////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<br />  <br /> <br />
+
+<table border="1" align="center" >     
+        
+         <tr>
+        	<td colspan="2">Track Receiver: </td>
+        </tr>
+        
+         <tr  ng-repeat="track in cTrackReceiver"  >
+        	<td >{{track.name}} : {{$index}} </td>
+            <td >
+            	 <input type="radio"  ng-model="trackReceiver['v'+$index]" name="trackReceiver{{$index}}" id="on_trackReceiver{{$index}}" value="s">
+           
+                   <label id="label_trackReceiver{{track.index}}"  for="on_trackReceiver{{track.index}}">
+                        SI
+                   </label>
+                   
+                 <input type="radio"  ng-model="trackReceiver['v'+$index]"  name="trackReceiver{{$index}}" id="off_trackReceiver{{$index}}" value="n">
+                   
+                   <label id="label_trackReceiver{{$index}}"  for="off_trackReceiver{{$index}}">
+                        NO
+                   </label>
+                   
+           
+  			</td>
+            
+            
+            
+        </tr>   
+        
+        
+ 
+          <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Track Receiver" ng-click="validate('trackReceiver');" />
+            </td>
+        </tr>
+        
+        </table> 
+    
+    
+    
+   </div >
+   </div >
+   </body>
+   </html>
+
+
+

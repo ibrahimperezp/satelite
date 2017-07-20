@@ -1,0 +1,83 @@
+
+<!DOCTYPE html >
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prepase</title>
+<script src="../../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/dialog.js"></script>
+<script src="../../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/validate.js"></script>
+
+
+
+</head>
+
+
+<body ng-app="satelite" >
+
+	<div>
+    
+    	<div  ng-controller="dialog" ng-include="'../../../../View/Shared/dialog.html'"></div>  
+        
+		
+        
+        
+        
+		<div ng-controller="validate" >
+ 
+<br />  <br /> <br />
+<table border="1" align="center">
+          
+        
+        
+        
+         <tr>
+        	<td colspan="2" >STATUS : </td>
+        </tr>
+        
+        
+         <tr  ng-repeat="s in cStatus"  >
+        	<td >{{s.name}} : </td>
+            <td >
+            	 <input type="radio"  ng-model="status['v'+$index]" name="status{{$index}}" id="on_status{{$index}}" value="s">
+           
+                   <label id="label_status{{$index}}"  for="on_status{{$index}}">
+                        ON
+                   </label>
+                   
+                 <input type="radio"  ng-model="status['v'+$index]"  name="status{{$index}}" id="off_status{{$index}}" value="n">
+                   
+                   <label id="label_status{{$index}}"  for="off_status{{$index}}">
+                        OFF
+                   </label>
+                   
+           
+  			</td>
+        </tr>
+        
+         <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Status" ng-click="validate('status');" />
+            </td>
+        </tr>
+        
+        
+</table>     
+
+
+  <br />  <br /> <br />
+    
+    
+    
+   </div>
+   </div>
+   </body>
+   </html>
+
+
+

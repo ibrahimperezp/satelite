@@ -1,0 +1,32 @@
+<div id="table_container">
+    <table  class="tstatus" ng-init="setData.current('Status','status')">        
+        <tr>
+            <td colspan="2" >{{currentModule.title}} : </td>
+        </tr>    
+        
+        <tr  ng-repeat="s in nStatus"  >
+            <td >{{s.title}} : </td>
+            <td >
+                <input type="radio"  ng-model="status['v'+$index]" name="status{{$index}}" id="on_status{{$index}}" value="s">
+                <label id="label_status{{$index}}"  for="on_status{{$index}}">ON</label>
+                   
+                <input type="radio"  ng-model="status['v'+$index]"  name="status{{$index}}" id="off_status{{$index}}" value="n">  
+                <label id="label_status{{$index}}"  for="off_status{{$index}}"> OFF </label>
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="status.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+        <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table> 
+</div>

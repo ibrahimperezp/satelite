@@ -1,0 +1,167 @@
+<!DOCTYPE html >
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prepase</title>
+<script src="../../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/dialog.js"></script>
+<script src="../../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/validate.js"></script>
+
+
+
+</head>
+
+
+<body ng-app="satelite" >
+
+	<div>
+    
+    	<div  ng-controller="dialog" ng-include="'../../../../View/Shared/dialog.html'"></div>  
+        
+		
+        
+        
+        
+		<div ng-controller="validate" >
+  <br />  <br />  <br /> 
+  
+  <!--  
+   //////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////                         ///////////////////////////////////////
+	/////////////////////////////////   forzar valor del BLT  ////////////////////////////////////////
+	////////////////////////////////                         /////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 
+  <input type="button" value="BLT {{currentPass.backup }}" ng-click="forceBLT();" >
+  
+  <!--  
+   //////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////                         ///////////////////////////////////////
+	/////////////////////////////////   forzar valor del BLT  ////////////////////////////////////////
+	////////////////////////////////                         /////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+    
+    <table border="1" align="center">     
+        
+        <tr>
+        	<td colspan="2" >Task list SMCS  : </td>
+        </tr>
+        
+        <tr>
+        	<td >{{cTaskSmcs.id}} :</td>
+           <td >
+            	 <input type="text" ng-model="taskSmcs.id" >
+            </td>
+        </tr> 
+        
+        <tr>
+        	<td >{{cTaskSmcs.type}} :</td>
+           <td >
+            <input type="radio"  ng-model="taskSmcs.type" name="taskSmcsType" id="on_taskSmcsType" value="remote">
+           
+                   <label  for="on_taskSmcsType">
+                       REMOTE
+                   </label>
+                   
+                 <input type="radio"  ng-model="taskSmcs.type"  name="taskSmcsType" id="off_taskSmcsType" value="local">
+                   
+                   <label  for="off_taskSmcsType">
+                        LOCAL
+                   </label>
+            </td>
+        </tr> 
+        
+        <tr>
+        	<td colspan="2" >Capture time : </td>
+        </tr>
+        
+        <tr>
+        	<td >{{cTaskSmcs.utc1}} :</td>
+           <td >
+            	 <input type="text" ng-model="taskSmcs.utc1" >
+                 <input type="time" step="1"id="h" >
+                 <input type="button" value="Obtener hora actual de Venezuela" ng-click="isTime();" > 
+                 <input type="button" value="set" ng-click="setTimeV();" > 
+            </td>
+        </tr> 
+        
+        <tr>
+        	<td >{{cTaskSmcs.local1}} :  </td>
+           <td >
+            	 <input type="text" ng-model="taskSmcs.local1" >
+                 <select ng-model="taskSmcs.meridium1">
+                    <option value="am">am</option>
+                    <option value="pm">pm</option>
+                </select>
+            </td>
+        </tr> 
+        
+        <tr>
+        	<td >{{cTaskSmcs.utc2}} :</td>
+           <td >
+            	 <input type="text" ng-model="taskSmcs.utc2" >
+            </td>
+        </tr> 
+        
+        <tr>
+        	<td >{{cTaskSmcs.local2}} :  </td>
+           <td >
+            	 <input type="text" ng-model="taskSmcs.local2" >
+                 <select ng-model="taskSmcs.meridium2">
+                    <option value="am">am</option>
+                    <option value="pm">pm</option>
+                </select>
+                <input type="text" id="test">
+            </td>
+        </tr> 
+        
+      
+        
+        <tr ng-repeat="ar in taskSmcs.area" >
+        	<td  >{{cTaskSmcs.area}} {{$index+1}}  :</td>
+           <td >
+                <select ng-init="getCountries($index)"   ng-model="taskSmcs.area[$index]"  >
+                    <option  ng-repeat="c in taskSmcs.country[$index]"  value="{{c}}" >{{c}}</option>
+                </select>
+              
+               <span ng-repeat="sub in taskSmcs['subAreas'+$index]">
+               <br>
+              
+                <select   ng-model="taskSmcs.area['subAreas'+$parent.$index][$index]"   ng-init="getStates($parent.$index,$index)"    >
+                    <option ng-repeat="stat in taskSmcs['states'+$parent.$index][$index]" value="{{stat.estado}}" >{{stat.estado}}</option>
+                </select>
+               </span>
+              
+                
+            </td>
+        </tr> 
+        
+        <tr>
+        	<td >{{cTaskSmcs.image}} :</td>
+           <td >
+            	 <input type="text" ng-model="taskSmcs.image" >
+            </td>
+        </tr> 
+        
+        <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Task List Smcs" ng-click="validate('taskScms');" />
+            </td>
+        </tr>
+        
+        </table> 
+    
+   </div>
+   </div>
+   </body>
+   </html>  
+   
+          
+  

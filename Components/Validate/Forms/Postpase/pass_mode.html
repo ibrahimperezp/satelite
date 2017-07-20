@@ -1,0 +1,83 @@
+<!DOCTYPE html >
+<html lang="es" ng-app="satelite"  ng-controller="controller" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prepase</title>
+<script src="../../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../../Model/Js/Angular/Service/dialog.js"></script>
+<script src="../../../../Model/Js/Angular/Service/route.js"></script>
+<script src="../../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/controller.js"></script>
+
+
+
+</head>
+
+
+<body  >
+
+	<div>
+    
+    	<div   ng-include src="route.shortcut.dialog"></div>  
+        
+		
+        
+        
+        
+		<div >
+   
+
+    
+
+          
+<table border="1" align="center" >     
+        
+        <tr>
+        	<td colspan="2" align="center" >Pass Mode : </td>
+        </tr>
+        
+         <tr  >
+        	<td >{{nPassMode2[0].title}} : </td>
+            <td >
+            	 <input type="radio"  ng-model="passMode2['v0']" name="passMode20" id="on_passMode20" value="s">
+           
+                   <label  for="on_passMode20">
+                        Efective
+                   </label>
+                   
+                 <input type="radio"  ng-model="passMode2['v0']"  name="passMode20" id="off_passMode20" value="n">
+                   
+                   <label  for="off_passMode20">
+                        Failed
+                   </label>
+                   
+           
+  			</td>
+            
+        </tr>   
+        
+        
+         <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Pass Mode" ng-click="validate('passMode2');" />
+            </td>
+        </tr>
+        
+      
+      
+        
+    </table>
+    
+          
+    
+    
+    
+    
+   </div>
+   </div>
+   </body>
+   </html>

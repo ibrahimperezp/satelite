@@ -1,0 +1,47 @@
+label[for^="on_"],label[for^="off_"]
+{
+	display:inline;
+	float:left;
+	width:60px;
+	height:30px;
+	background-color:#CCC;
+	text-align:center;
+	cursor:pointer;
+	font-size:24px;
+	color:#FFF;
+	
+}
+
+label[for^="on_"]
+{
+	border-right:2px solid #999;
+	background-color:#CCC;	
+}
+
+input[type="radio"][id^="off_"]:checked + label
+{ 
+	background-color:#DD2C00;
+}
+
+input[type="radio"][id^="on_"]:checked + label
+{ 
+	background-color:#00C853;
+}
+
+#syn,#asyn,#local,#remote
+{
+	font-size:20px;
+	box-sizing:border-box;
+	padding-top:5px;
+}
+#local,#remote
+{
+	width:90px;
+}
+
+
+input[type="radio"][id^="on_"]:checked + #syn, input[type="radio"][id^="off_"]:checked + #asyn, input[type="radio"][id^="on_"]:checked + #remote, input[type="radio"][id^="off_"]:checked + #local
+{ 
+	background-color:#39C;
+}
+

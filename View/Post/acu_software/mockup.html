@@ -1,0 +1,39 @@
+<div id="table_container">
+    <table  class="tacu3"  ng-init="setData.current('Acu Software','acuSoftwarePost')" >
+        <tr>
+            <td colspan="2">ACU Software: </td>
+        </tr>
+        
+        <tr>
+            <td >Return to zero : </td>
+            <td >
+                <input type="radio"  ng-model="acuSoftwarePost['v0']" name="acuSoftwarePost" id="on_acuSoftwarePost" value="s">
+                <label for="on_acuSoftwarePost">SI</label>
+                   
+                <input type="radio"  ng-model="acuSoftwarePost['v0']"  name="acuSoftwarePost" id="off_acuSoftwarePost" value="n">
+                <label for="off_acuSoftwarePost"> NO </label>
+            </td>
+        </tr>
+        
+        <tr>
+            <td >Record :</td>
+            <td >
+                 <input type="text" ng-model="acuSoftwarePost['record']" placeholder="decimales" >
+            </td>
+        </tr>
+        
+         <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="acuSoftwarePost.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>
+</div>

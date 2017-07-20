@@ -1,0 +1,101 @@
+<!DOCTYPE html >
+<html lang="es" ng-app="satelite" ng-controller="controller">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../Model/Js/Angular/Service/dialog.js"></script>
+<script src="../../../Model/Js/Angular/Service/route.js"></script>
+<script src="../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../Model/Js/Angular/Settings/settingsDeclareInitialize.js"></script>
+<script src="../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../Model/Js/Angular/Controller/controller.js"></script>
+
+<link rel="stylesheet" href="../../../View/Style/trend.css" type="text/css">
+<link rel="stylesheet" href="../../../View/Style/binary.css" type="text/css">
+<link rel="stylesheet" href="../../../View/Style/dialog.css" type="text/css">
+<link rel="stylesheet" href="../../../View/Style/menu.css" type="text/css">
+<link rel="stylesheet" href="../../../View/Style/cuerpo.css" type="text/css">
+
+<title>{{title}}</title>
+</head>
+
+<body>
+
+<div class="container">
+	<div ng-include src="route.shortcut.dialog" ></div>  
+    
+    <div class="cabecera">
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+    <div id="menu">
+    	<input type="checkbox" id="menu_list">
+    	<label class="hamburguer" for="menu_list">&#9776;</label>
+    	<div class="logo"></div>
+        <div class="menu_list">
+            <a href="satellite.html">Satélites</a>
+            <a href="#">Crear Actividad</a>
+            <a href="#">Registrar Actividad</a>
+            <a href="#">Editar Actividad</a>
+            <a href="#">Consultar Actividad</a>
+        </div>
+    </div>
+    
+    <div>
+    
+        <table ng-hide="currentPass.pass" ng-init="getTodayActivity()"  >
+            <tr>
+                <td >Nro de pase</td>
+                <td >turno</td>
+                <td >fecha</td>
+                <td >satelite</td>
+                <td >porcentaje</td>
+                <td >seleccionar</td>
+            </tr>
+            
+        </table>
+        
+        <table ng-hide="currentPass.pass" ng-repeat="pa in pass.records">
+            <tr ng-if="$index>0">
+                <td >{{pa.nro_pase}}</td>
+                <td >{{pa.local_time}}</td>
+                <td >{{pa.fecha}}</td>
+                <td >{{pa.idsatelite}}</td>
+                 <td >{{pa.complete}}</td>
+                <td ng-click="selectActivity(pa.idpase,pa.complete,pa.modules)">Selecciona </td>
+            </tr>
+        </table>
+        
+         <table ng-show="currentPass.pass">
+            <tr>
+                <td>idpase</td>
+                <td>hay BLT</td>
+            </tr>
+            <tr>
+                <td >{{currentPass.id}}</td>
+                <td >{{currentPass.blt}}</td>
+            </tr>
+            <tr>
+                <td colspan="2" ng-click="cancelActivity();" >Cancelar</td>
+            </tr>
+            
+        </table>
+    	<div  ng-show="currentPass.pass">
+        	<div>
+            	<a ng-hide="currentPass.modules['pass_mode']" ng-click="menu();" href="#send">pass mode Incompleto</a>
+                <span ng-show="currentPass.modules['pass_mode']" >pass mode Completado</span>
+                <a ng-hide="currentPass.modules['power']" ng-click="menu();" href="#power">power Incompleto</a>
+                <span ng-show="currentPass.modules['power']" >power Completado</span>
+            </div>
+        	<div ng-view></div>
+        </div>
+    </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<div id="table_container">
+    <table  class="tdemulator" ng-init="setData.current('Demulator','demulatorPre')"  > 
+        <tr>
+            <td colspan="2" align="center" >Demulator: </td>
+        </tr>
+        
+        <tr  ng-repeat="dem in nDemulatorPre "  >
+            <td >{{dem.title}} : </td>
+            <td >
+                <input type="radio"  ng-model="demulatorPre['v'+$index]" name="demulatorPre{{$index}}" id="on_demulatorPre{{$index}}" value="s">       
+                <label id="label_demulatorPre{{$index}}"  for="on_demulatorPre{{$index}}"> SI</label>
+                   
+                 <input type="radio"  ng-model="demulatorPre['v'+$index]"  name="demulatorPre{{$index}}" id="off_demulatorPre{{$index}}" value="n"> 
+                 <label id="label_demulatorPre{{$index}}"  for="off_demulatorPre{{$index}}">  NO </label>
+            </td>
+        </tr>   
+         <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="demulatorPre.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>
+</div>

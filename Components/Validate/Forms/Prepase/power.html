@@ -1,0 +1,82 @@
+<!DOCTYPE html >
+<html lang="es"  ng-app="satelite"  ng-controller="controller"  >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prepase</title>
+<script src="../../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../../Model/Js/Angular/Service/dialog.js"></script>
+<script src="../../../../Model/Js/Angular/Service/route.js"></script>
+<script src="../../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Settings/settingsDeclareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/controller.js"></script>
+
+
+
+</head>
+
+
+<body >
+
+	<div>
+    
+    	<div ng-include src="route.shortcut.dialog" ></div>
+        
+		
+        
+        
+        
+		<div >
+   
+
+    
+
+          
+<table border="1" align="center" >     
+       
+        <tr>
+        	<td colspan="2" align="center" >Power: </td>
+        </tr>
+        
+         <tr  ng-repeat="pow in nPower"  >
+        	<td >{{pow.title}} : </td>
+            <td >
+            	 <input type="radio"  ng-model="power[pow.property]" name="power{{$index}}" id="on_power{{$index}}" value="s">
+           
+                   <label for="on_power{{$index}}">
+                        SI
+                   </label>
+                   
+                 <input type="radio"  ng-model="power[pow.property]" name="power{{$index}}" id="off_power{{$index}}" value="n">
+                   
+                   <label for="off_power{{$index}}">
+                        NO
+                   </label>
+                   
+           
+  			</td>
+            
+        </tr>   
+        
+         <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Power" ng-click="validate('power');" />
+            </td>
+        </tr>
+        
+      
+        
+    </table>
+    
+          
+    
+    
+    
+    
+   </div>
+   </div>
+   </body>
+   </html>

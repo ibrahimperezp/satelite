@@ -1,0 +1,119 @@
+
+<!DOCTYPE html >
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prepase</title>
+<script src="../../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/dialog.js"></script>
+<script src="../../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/validate.js"></script>
+
+
+
+</head>
+
+
+<body ng-app="satelite" >
+
+	<div>
+    
+    	<div  ng-controller="dialog" ng-include="'../../../../View/Shared/dialog.html'"></div>  
+        
+		
+        
+        
+        
+		<div ng-controller="validate" >
+  <br />  <br />  <br /> 
+  
+  <!--  
+   //////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////                         ///////////////////////////////////////
+	/////////////////////////////////   forzar valor del BLT  ////////////////////////////////////////
+	////////////////////////////////                         /////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////-->
+ 
+  <input type="button" value="BLT {{currentPass.backup }}" ng-click="forceBLT();" >
+  
+  <!--  
+   //////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////                         ///////////////////////////////////////
+	/////////////////////////////////   forzar valor del BLT  ////////////////////////////////////////
+	////////////////////////////////                         /////////////////////////////////////////
+	//////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<br />  <br /> <br />
+
+<table border="1" align="center" >     
+        
+        <tr>
+        	<td colspan="2" align="center" >Demulator: </td>
+        </tr>
+        
+         <tr  ng-repeat="dem in cDemulator | limitTo:3"  >
+        	<td >{{dem.name}} : </td>
+            <td >
+            	 <input type="radio"  ng-model="demulator['v'+$index]" name="demulator{{$index}}" id="on_demulator{{$index}}" value="s">
+           
+                   <label id="label_demulator{{$index}}"  for="on_demulator{{$index}}">
+                        SI
+                   </label>
+                   
+                 <input type="radio"  ng-model="demulator['v'+$index]"  name="demulator{{$index}}" id="off_demulator{{$index}}" value="n">
+                   
+                   <label id="label_demulator{{$index}}"  for="off_demulator{{$index}}">
+                        NO
+                   </label>
+                   
+           
+  			</td>
+            
+        </tr>   
+        
+        
+      
+        
+    </table>
+    
+    <br />  
+    <table border="1" align="center" >     
+        
+    <tr>
+        	<td colspan="2" align="center" >Total Eb/ N0 : </td>
+        </tr>
+      
+        
+        <tr >
+        	<td colspan="2" align="center" >
+       			<input type="text" ng-model="demulator.total1" >
+                <input type="text" ng-model="demulator.total2" >
+                <input type="text" ng-model="demulator.total3" >
+         	</td>
+        	
+        </tr>
+        
+
+          <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Demulator" ng-click="validate('demulator');" />
+            </td>
+        </tr>
+        
+        
+          </table>
+
+
+    
+    
+    
+   </div>
+   </div>
+   </body>
+   </html>
+
+

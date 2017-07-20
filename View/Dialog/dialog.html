@@ -1,0 +1,45 @@
+<!DOCTYPE html >
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dialog</title>
+<script src="../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../Model/Js/Angular/App/app.js"></script>
+<script src="../../Model/Js/Angular/Service/dialog.js"></script>
+<script src="../../Model/Js/Angular/Service/route.js"></script>
+<script src="../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../Model/Js/Angular/Settings/settingsDeclareInitialize.js"></script>
+<script src="../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../Model/Js/Angular/Controller/controller.js"></script>
+
+<link rel="stylesheet" href="../Style/trend.css" type="text/css">
+<link rel="stylesheet" href="../Style/dialog.css" type="text/css">
+
+</head>
+
+
+<body ng-app="satelite" ng-controller="controller" >
+
+<div ng-show="dialog.statusDialog" class="dialog_background">
+    <div class="dialog_container">             
+        <div ng-show="dialog.titleMessage"  class="dialog_title">Mensaje del Sistema</div> 
+        
+        <div ng-show="dialog.titleLoading"  class="dialog_title">Cargando</div> 
+        
+        <div  ng-show="dialog.statusLoading"  class="dialog_loader"></div> 
+       
+        <div ng-show="dialog.statusMessage" class="dialog_message">        
+            <div class="dialog_alert" >{{dialog.message}}</div>       
+        </div> 
+        
+        <div ng-show="dialog.buttonContinue" class="dialog_close" ng-click="dialog.clear()"> Aceptar</div> 
+        
+        <div ng-show="dialog.buttonOption" class="dialog_option" ng-click="dialog.accept()"> <div></div>Aceptar</div>    
+        <div ng-show="dialog.buttonOption" class="dialog_option" ng-click="dialog.cancel()"> Cancelar</div>       
+    </div>
+</div>   	 	
+   
+</body>
+</html>

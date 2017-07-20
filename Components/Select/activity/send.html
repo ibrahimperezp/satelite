@@ -1,0 +1,26 @@
+
+<table border="1" align="center"  ng-hide="currentPass.modules['pass_mode']">
+        
+        
+         <tr>
+        	<td colspan="2">Pass mode {{cPassMode}}: </td>
+        </tr>
+        
+         <tr  ng-repeat="pm in nPassMode"   >
+        	<td >{{pm.title}} :   </td>
+            <td >
+            	 <input type="radio"  ng-model="passMode['v0']" name="passMode1" id="on_passMode{{$index+1}}" value="{{$index+1}}">
+           
+                   <label  for="on_passMode{{$index+1}}"></label>
+  			</td>
+            
+        </tr>  
+        
+        <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Pass Mode" ng-click="validate('passMode');" />
+            </td>
+        </tr> 
+        
+       
+   </table>

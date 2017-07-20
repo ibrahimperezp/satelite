@@ -1,0 +1,32 @@
+<div id="table_container">
+    <table class="tpower" ng-init="setData.current('Power','power')" > 
+        <tr>
+            <td colspan="2" align="center" >Power: </td>
+        </tr>
+        
+        <tr  ng-repeat="pow in nPower"  >
+            <td >{{pow.title}} : </td>
+            <td >
+                <input type="radio"  ng-model="power['v'+$index]" name="power{{$index}}" id="on_power{{$index}}" value="s">       
+                <label id="label_power{{$index}}"  for="on_power{{$index}}">SI </label>
+                   
+                <input type="radio"  ng-model="power['v'+$index]"  name="power{{$index}}" id="off_power{{$index}}" value="n">     
+                <label id="label_power{{$index}}"  for="off_power{{$index}}"> NO</label>
+            </td>
+            
+        </tr>         
+          <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="power.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>
+</div>

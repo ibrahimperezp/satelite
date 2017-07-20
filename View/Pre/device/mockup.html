@@ -1,0 +1,32 @@
+<div id="table_container">
+    <table class="tdevice" ng-init="setData.current('Device','device')">
+        <tr>
+            <td colspan="2">Device : </td>
+        </tr>
+        
+        <tr  ng-repeat="d in nDevice"  >
+            <td >{{d.title}} : </td>
+            <td >
+                <input type="radio"  ng-model="device['v'+$index]" name="device{{$index}}" id="on_device{{$index}}" value="s">    
+                <label for="on_device{{$index}}"> ON</label>
+                   
+                <input type="radio" ng-model="device['v'+$index]" name="device{{$index}}" id="off_device{{$index}}" value="n">     
+                <label for="off_device{{$index}}">OFF</label>
+            </td>
+        </tr> 
+        
+          <tr>
+            <td colspan="2">
+                Agregar nota
+                <input type="checkbox" id="nota{{currentModule.module}}" style="display:inline" />
+                <textarea ng-model="device.notes" style="resize:none;" id="text{{currentModule.module}}"></textarea>
+            </td>
+        </tr>
+    
+          <tr>
+            <td colspan="2">
+                <input type="button" value="Guardar {{currentModule.title}}" ng-click="play()" />
+            </td>
+        </tr>
+    </table>   
+</div>

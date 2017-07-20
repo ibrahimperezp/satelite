@@ -1,0 +1,30 @@
+body
+{
+	background-color: #EFEFEF;
+	padding:0px;
+	margin:0px;
+}
+
+
+.container
+{
+	background-color:#fff;
+	margin:0 auto;
+	width:100%;
+	max-width:960px;
+	box-shadow: 5px 5px 18px #888888;
+	padding-bottom:40px;
+}
+
+
+@media (max-width: 960px)
+{
+	body
+	{
+		min-width:320px;
+	}	
+	.container
+	{
+		width:100%;
+	}	
+}

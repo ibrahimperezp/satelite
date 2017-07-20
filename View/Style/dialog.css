@@ -1,0 +1,153 @@
+.dialog_background
+{
+	width:100vw;
+	height:100vh;
+	background-color: rgba(0,0,0,0.7);
+	text-align:center;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:2;
+}
+
+.dialog_container
+{
+	width:400px;
+	height:200px;
+	background-color:#FFF;
+	border-radius:5px;
+	margin:0 auto;
+	margin-top:50px;
+}
+
+
+.dialog_title
+{
+	background-color: #09C;
+	width:100%;
+	height:30px;
+	font-size:20px;
+	padding-top:10px;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	text-align:center;
+	color:#fff;
+}
+
+.dialog_message
+{
+	/*background-color:orange;*/
+	height:110px;
+	width:100%;
+}
+
+.dialog_alert
+{
+	/*background-color:red;*/
+	position:relative;
+	display:inline-block;
+	width:90%;
+	float:left;
+	left:5%;
+	top:50%;
+	transform:translateY(-50%);
+	color:#333;
+}
+
+
+
+.dialog_close
+{
+	background-color:#09C;
+	height:40px;
+	width:120px;
+	position:relative;
+	top:5px;
+	font-size:18px;
+	padding-top:9px;
+	box-sizing:border-box;
+	margin:0 auto;
+	cursor:pointer;
+	color:#fff;
+}
+
+.dialog_option
+{
+	background-color:#09C;
+	height:40px;
+	width:120px;
+	position:relative;
+	display:inline-block;
+	top:5px;
+	font-size:18px;
+	padding-top:9px;
+	box-sizing:border-box;
+	cursor:pointer;
+	color:#fff;
+}
+
+.dialog_option:nth-child(6)
+{
+	left:-20px;
+}
+
+.dialog_option:nth-child(7)
+{
+	left:20px;
+}
+
+
+
+.dialog_loader
+{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  position: relative;
+  margin: 0 auto;
+  top:50px;
+}
+
+
+.dialog_loader:before, .dialog_loader:after{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 10px solid transparent;
+  border-top-color: #3498db;
+}
+
+.dialog_loader:before
+{
+  z-index: 100;
+  animation: rotate 1s infinite;
+}
+
+.dialog_loader:after
+{
+  border: 10px solid #ccc;
+}
+
+@keyframes rotate
+{
+  0%
+  {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100%
+  {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+

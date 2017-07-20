@@ -1,0 +1,67 @@
+<!DOCTYPE html >
+<html lang="es"  ng-app="satelite"  ng-controller="controller"  >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prepase</title>
+<script src="../../../../Model/Js/Angular/Core/angularV1.js"></script>
+<script src="../../../../Model/Js/Angular/Dependency/angular-route.js"></script>
+<script src="../../../../Model/Js/Angular/App/app.js"></script>
+<script src="../../../../Model/Js/Angular/Service/dialog.js"></script>
+<script src="../../../../Model/Js/Angular/Service/route.js"></script>
+<script src="../../../../Model/Js/Angular/Service/declareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Settings/settingsDeclareInitialize.js"></script>
+<script src="../../../../Model/Js/Angular/Service/validate.js"></script>
+<script src="../../../../Model/Js/Angular/Service/setData.js"></script>
+<script src="../../../../Model/Js/Angular/Controller/controller.js"></script>
+
+
+
+</head>
+
+
+<body>
+
+	<div>
+    
+    	<div ng-include src="route.shortcut.dialog" ></div>   
+        
+		
+        
+        
+        
+		<div>
+
+
+<table border="1" align="center" >
+        
+        
+         <tr>
+        	<td colspan="2">Pass mode {{cPassMode}}: </td>
+        </tr>
+        
+         <tr  ng-repeat="pm in nPassMode"   >
+        	<td >{{pm.title}} :   </td>
+            <td >
+            	 <input type="radio"  ng-model="passMode['v0']" name="passMode1" id="on_passMode{{$index+1}}" value="{{$index+1}}">
+           
+                   <label  for="on_passMode{{$index+1}}"></label>
+  			</td>
+            
+        </tr>  
+        
+        <tr>
+        	<td colspan="2">
+            	<input type="button" value="Guardar Pass Mode" ng-click="validate('passMode');" />
+            </td>
+        </tr> 
+        
+       
+   </table>
+
+
+
+    
+   </div>
+   </div>
+   </body>
+   </html>
